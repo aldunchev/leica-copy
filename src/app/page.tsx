@@ -1,103 +1,205 @@
-import Image from "next/image";
+import Hero from '@/components/Hero';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Component Demo */}
+      <div className="space-y-20">
+
+        {/* Hero Simple with Back Link */}
+        <Hero
+          headline="Section Topic"
+          subline="Lorem ipsum dolor sit amet, consectetur elit"
+          showBackLink={true}
+          backLinkText="Go back link"
+          variant="simple"
+        />
+
+        {/* Divider */}
+        <div className="h-px bg-border" />
+
+        {/* Hero Media with Image */}
+        <Hero
+          headline="Hero with Media"
+          subline="This Hero variant includes an image alongside the content, perfect for showcasing visual content with your messaging."
+          variant="media"
+          imageSrc="/hero-image.jpg"
+          imageAlt="Hero image from Figma design"
+          imagePriority={true}
+        />
+
+        {/* Divider */}
+        <div className="h-px bg-border" />
+
+        {/* Hero Simple without Back Link */}
+        <Hero
+          headline="Another Section Topic"
+          subline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          variant="simple"
+        />
+
+        {/* Divider */}
+        <div className="h-px bg-border" />
+
+        {/* Hero Media with Back Link */}
+        <Hero
+          headline="Media Hero with Navigation"
+          subline="Combining image support with back navigation for complex user flows."
+          variant="media"
+          imageSrc="/hero-image.jpg"
+          imageAlt="Hero image from Figma design"
+          showBackLink={true}
+          backLinkText="Back to gallery"
+        />
+
+        {/* Divider */}
+        <div className="h-px bg-border" />
+
+        {/* Hero Simple without Subline */}
+        <Hero
+          headline="Simple Headline Only"
+          variant="simple"
+        />
+
+        {/* Divider */}
+        <div className="h-px bg-border" />
+
+        {/* Size Variants Demo */}
+        <div className="bg-muted py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-headline-2-lg font-normal text-foreground mb-4">
+              Size Variants
+            </h2>
+            <p className="text-body-lg text-dark-grey">
+              Fixed size components for specific breakpoints
+            </p>
+          </div>
+
+          <div className="space-y-16">
+
+            {/* Large Size with Media */}
+            <div className="flex flex-col items-center">
+              <div className="mb-4">
+                <span className="text-label-lg font-medium text-dark-grey">Size: Large (LG) - Media Variant</span>
+              </div>
+              <div className="border border-border overflow-hidden">
+                <Hero
+                  headline="Large Size Hero with Image"
+                  subline="Optimized for desktop viewing with media content"
+                  size="lg"
+                  variant="media"
+                  imageSrc="/hero-image.jpg"
+                  imageAlt="Hero image from Figma design"
+                />
+              </div>
+            </div>
+
+            {/* Medium Size */}
+            <div className="flex flex-col items-center">
+              <div className="mb-4">
+                <span className="text-label-lg font-medium text-dark-grey">Size: Medium (MD) - Simple Variant</span>
+              </div>
+              <div className="border border-border overflow-hidden">
+                <Hero
+                  headline="Medium Size Hero"
+                  subline="Perfect for tablet devices"
+                  size="md"
+                  variant="simple"
+                />
+              </div>
+            </div>
+
+            {/* Small Size with Media */}
+            <div className="flex flex-col items-center">
+              <div className="mb-4">
+                <span className="text-label-lg font-medium text-dark-grey">Size: Small (SM) - Media Variant</span>
+              </div>
+              <div className="border border-border overflow-hidden">
+                <Hero
+                  headline="Small Size Hero"
+                  subline="Mobile-optimized with image"
+                  size="sm"
+                  variant="media"
+                  imageSrc="/hero-image.jpg"
+                  imageAlt="Hero image from Figma design"
+                  showBackLink={true}
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Component Variants Documentation */}
+        <div className="max-w-4xl mx-auto px-6 py-16">
+          <h2 className="text-headline-2-lg font-normal text-foreground mb-8">
+            Hero Component Variants
+          </h2>
+
+          {/* Simple Variant */}
+          <div className="mb-12">
+            <h3 className="text-headline-3-lg font-medium mb-4">Simple Variant</h3>
+            <p className="text-body-lg text-dark-grey mb-6">
+              Text-only hero perfect for content-focused pages. Clean typography with optional back navigation.
+            </p>
+            <div className="bg-grey-50 p-4 rounded-lg">
+              <code className="text-label-lg font-mono">variant="simple"</code>
+            </div>
+          </div>
+
+          {/* Media Variant */}
+          <div className="mb-12">
+            <h3 className="text-headline-3-lg font-medium mb-4">Media Variant</h3>
+            <p className="text-body-lg text-dark-grey mb-6">
+              Hero with image support. Content and image are arranged side-by-side on desktop, stacked on mobile.
+            </p>
+            <div className="bg-grey-50 p-4 rounded-lg">
+              <code className="text-label-lg font-mono">variant="media"</code>
+            </div>
+          </div>
+
+          {/* Props Documentation */}
+          <div className="bg-grey-50 p-6 rounded-lg">
+            <h3 className="text-headline-6-lg font-medium mb-4">Updated Props</h3>
+            <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">headline: string</code>
+                <span className="text-body-sm text-dark-grey">Required - Main headline text</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">subline?: string</code>
+                <span className="text-body-sm text-dark-grey">Optional - Subtitle text</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">variant?: simple | media</code>
+                <span className="text-body-sm text-dark-grey">Component variant (default: simple)</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">imageSrc?: string</code>
+                <span className="text-body-sm text-dark-grey">Image source URL (required for media variant)</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">imageAlt?: string</code>
+                <span className="text-body-sm text-dark-grey">Image alt text (required for media variant)</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">imagePriority?: boolean</code>
+                <span className="text-body-sm text-dark-grey">Next.js image priority loading</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">showBackLink?: boolean</code>
+                <span className="text-body-sm text-dark-grey">Show back navigation link</span>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">size?: sm | md | lg | auto</code>
+                <span className="text-body-sm text-dark-grey">Responsive behavior (default: auto)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
   );
 }

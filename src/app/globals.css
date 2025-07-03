@@ -1,26 +1,269 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* === COLORS === */
+  /* Primary Colors */
+  --color-red: #E20612;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-warm-black: #222222;
+  --color-dark-grey: #8E908F;
+  --color-light-grey: #D1D4D3;
+
+  /* Greyscale */
+  --color-grey-50: #F5F5F5;
+  --color-grey-100: #E7E7E7;
+  --color-grey-200: #D1D1D1;
+  --color-grey-300: #B5B4B4;
+  --color-grey-400: #9A9999;
+  --color-grey-500: #828282;
+  --color-grey-600: #6C6C6C;
+  --color-grey-700: #333333;
+  --color-grey-800: #1F1F1F;
+  --color-grey-900: #141414;
+
+  /* Alert Colors */
+  --color-info: #FCD57B;
+  --color-success: #16CC80;
+  --color-error: #FF2E00;
+  --color-warning: #FCC70C;
+  --color-neutral: #24A6FE;
+
+  /* Product-specific Colors */
+  --color-midnight-blue: #203138;
+  --color-safari-green: #3B4127;
+
+  /* Semantic Colors */
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-warm-black);
+  --color-muted: var(--color-grey-100);
+  --color-border: var(--color-grey-200);
+
+  /* Typography */
+  --font-outfit: "Outfit", system-ui, sans-serif;
+  --font-lg1052: "LG1052", monospace;
+
+  /* === SPACING === */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-14: 56px;
+  --spacing-16: 64px;
+  --spacing-18: 72px;
+  --spacing-20: 80px;
+  --spacing-22: 88px;
+  --spacing-24: 96px;
+  --spacing-26: 104px;
+
+  /* === BREAKPOINTS === */
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-xl: 1920px;
+
+  /* === GRID === */
+  --grid-columns-sm: 4;
+  --grid-columns-md: 8;
+  --grid-columns-lg: 12;
+  --grid-gap: 16px;
+  --grid-margin-sm: 20px;
+  --grid-margin-md: 40px;
+  --grid-margin-lg: 56px;
+
+  --font-normal: 400;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --*: initial;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  /* === COLORS === */
+  --color-red: var(--color-red);
+  --color-black: var(--color-black);
+  --color-white: var(--color-white);
+  --color-warm-black: var(--color-warm-black);
+  --color-dark-grey: var(--color-dark-grey);
+  --color-light-grey: var(--color-light-grey);
+
+  /* Greyscale */
+  --color-grey-50: var(--color-grey-50);
+  --color-grey-100: var(--color-grey-100);
+  --color-grey-200: var(--color-grey-200);
+  --color-grey-300: var(--color-grey-300);
+  --color-grey-400: var(--color-grey-400);
+  --color-grey-500: var(--color-grey-500);
+  --color-grey-600: var(--color-grey-600);
+  --color-grey-700: var(--color-grey-700);
+  --color-grey-800: var(--color-grey-800);
+  --color-grey-900: var(--color-grey-900);
+
+  /* Alert Colors */
+  --color-info: var(--color-info);
+  --color-success: var(--color-success);
+  --color-error: var(--color-error);
+  --color-warning: var(--color-warning);
+  --color-neutral: var(--color-neutral);
+
+  /* Product Colors */
+  --color-midnight-blue: var(--color-midnight-blue);
+  --color-safari-green: var(--color-safari-green);
+
+  /* Semantic Colors */
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+
+  /* === TYPOGRAPHY === */
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-lg1052);
+
+  /* Font Sizes - Display */
+  --text-display-lg: 76px;
+  --text-display-md: 68px;
+  --text-display-sm: 44px;
+
+  /* Font Sizes - Headlines */
+  --text-headline-1-lg: 54px;
+  --text-headline-2-lg: 46px;
+  --text-headline-3-lg: 36px;
+  --text-headline-4-lg: 32px;
+  --text-headline-5-lg: 28px;
+  --text-headline-6-lg: 24px;
+
+  --text-headline-1-md: 48px;
+  --text-headline-2-md: 40px;
+  --text-headline-3-md: 34px;
+  --text-headline-4-md: 30px;
+  --text-headline-5-md: 28px;
+  --text-headline-6-md: 24px;
+
+  --text-headline-1-sm: 40px;
+  --text-headline-2-sm: 36px;
+  --text-headline-3-sm: 32px;
+  --text-headline-4-sm: 28px;
+  --text-headline-5-sm: 24px;
+  --text-headline-6-sm: 20px;
+
+  /* Font Sizes - Body Text */
+  --text-body-lg: 20px;
+  --text-body-md: 18px;
+  --text-body-sm: 16px;
+
+  /* Font Sizes - Labels */
+  --text-label-lg: 14px;
+  --text-label-sm: 12px;
+
+  /* Line Heights */
+  --leading-tight: 1.12;
+  --leading-normal: 1.2;
+  --leading-relaxed: 1.4;
+  --leading-loose: 1.6;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-weight-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* === SPACING === */
+  --spacing-1: var(--spacing-1);
+  --spacing-2: var(--spacing-2);
+  --spacing-3: var(--spacing-3);
+  --spacing-4: var(--spacing-4);
+  --spacing-5: var(--spacing-5);
+  --spacing-6: var(--spacing-6);
+  --spacing-8: var(--spacing-8);
+  --spacing-10: var(--spacing-10);
+  --spacing-12: var(--spacing-12);
+  --spacing-14: var(--spacing-14);
+  --spacing-16: var(--spacing-16);
+  --spacing-18: var(--spacing-18);
+  --spacing-20: var(--spacing-20);
+  --spacing-22: var(--spacing-22);
+  --spacing-24: var(--spacing-24);
+  --spacing-26: var(--spacing-26);
+
+  /* === RADIUS === */
+  --radius-sm: 2px;
+  --radius-base: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* === GRID === */
+  --grid-columns-sm: var(--grid-columns-sm);
+  --grid-columns-md: var(--grid-columns-md);
+  --grid-columns-lg: var(--grid-columns-lg);
+  --grid-gap: var(--grid-gap);
+  --grid-margin-sm: var(--grid-margin-sm);
+  --grid-margin-md: var(--grid-margin-md);
+  --grid-margin-lg: var(--grid-margin-lg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: var(--color-grey-900);
+    --color-foreground: var(--color-grey-100);
+    --color-muted: var(--color-grey-800);
+    --color-border: var(--color-grey-700);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-foreground);
+  font-family: var(--font-outfit);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-normal leading-tight;
+}
+
+h1 {
+  @apply text-headline-1-sm md:text-headline-1-md lg:text-headline-1-lg;
+}
+
+h2 {
+  @apply text-headline-2-sm md:text-headline-2-md lg:text-headline-2-lg;
+}
+
+h3 {
+  @apply text-headline-3-sm md:text-headline-3-md lg:text-headline-3-lg;
+}
+
+h4 {
+  @apply text-headline-4-sm md:text-headline-4-md lg:text-headline-4-lg;
+}
+
+h5 {
+  @apply text-headline-5-sm md:text-headline-5-md lg:text-headline-5-lg;
+}
+
+h6 {
+  @apply text-headline-6-sm md:text-headline-6-md lg:text-headline-6-lg;
 }

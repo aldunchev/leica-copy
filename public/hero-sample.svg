@@ -1,0 +1,8 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#F5F5F5"/>
+  <rect x="50" y="50" width="500" height="300" fill="white" stroke="#E7E7E7" stroke-width="2"/>
+  <circle cx="200" cy="150" r="30" fill="#E20612"/>
+  <rect x="150" y="200" width="300" height="100" fill="#E7E7E7"/>
+  <text x="300" y="240" font-family="Arial" font-size="16" fill="#333333" text-anchor="middle">Hero Image Placeholder</text>
+  <text x="300" y="260" font-family="Arial" font-size="12" fill="#8E908F" text-anchor="middle">600 × 400 pixels</text>
+</svg>
