@@ -104,7 +104,7 @@ export default function Hero({
 
   const getImageClasses = () => {
     // Image takes full width and maintains aspect ratio
-    return "relative w-full aspect-[16/9] overflow-hidden";
+    return "relative w-full aspect-16/9 overflow-hidden";
   };
 
   return (

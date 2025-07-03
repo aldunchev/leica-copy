@@ -65,103 +65,12 @@ export default function Home() {
         {/* Divider */}
         <div className="h-px bg-border" />
 
-        {/* Size Variants Demo */}
-        <div className="bg-muted py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-headline-2-lg font-normal text-foreground mb-4">
-              Size Variants
-            </h2>
-            <p className="text-body-lg text-dark-grey">
-              Fixed size components for specific breakpoints
-            </p>
-          </div>
-
-          <div className="space-y-16">
-
-            {/* Large Size with Media */}
-            <div className="flex flex-col items-center">
-              <div className="mb-4">
-                <span className="text-label-lg font-medium text-dark-grey">Size: Large (LG) - Media Variant</span>
-              </div>
-              <div className="border border-border overflow-hidden">
-                <Hero
-                  headline="Large Size Hero with Image"
-                  subline="Optimized for desktop viewing with media content"
-                  size="lg"
-                  variant="media"
-                  imageSrc="/hero-image.jpg"
-                  imageAlt="Hero image from Figma design"
-                />
-              </div>
-            </div>
-
-            {/* Medium Size */}
-            <div className="flex flex-col items-center">
-              <div className="mb-4">
-                <span className="text-label-lg font-medium text-dark-grey">Size: Medium (MD) - Simple Variant</span>
-              </div>
-              <div className="border border-border overflow-hidden">
-                <Hero
-                  headline="Medium Size Hero"
-                  subline="Perfect for tablet devices"
-                  size="md"
-                  variant="simple"
-                />
-              </div>
-            </div>
-
-            {/* Small Size with Media */}
-            <div className="flex flex-col items-center">
-              <div className="mb-4">
-                <span className="text-label-lg font-medium text-dark-grey">Size: Small (SM) - Media Variant</span>
-              </div>
-              <div className="border border-border overflow-hidden">
-                <Hero
-                  headline="Small Size Hero"
-                  subline="Mobile-optimized with image"
-                  size="sm"
-                  variant="media"
-                  imageSrc="/hero-image.jpg"
-                  imageAlt="Hero image from Figma design"
-                  showBackLink={true}
-                />
-              </div>
-            </div>
-
-          </div>
-        </div>
-
         {/* Component Variants Documentation */}
-        <div className="max-w-4xl mx-auto px-6 py-16">
-          <h2 className="text-headline-2-lg font-normal text-foreground mb-8">
-            Hero Component Variants
-          </h2>
-
-          {/* Simple Variant */}
-          <div className="mb-12">
-            <h3 className="text-headline-3-lg font-medium mb-4">Simple Variant</h3>
-            <p className="text-body-lg text-dark-grey mb-6">
-              Text-only hero perfect for content-focused pages. Clean typography with optional back navigation.
-            </p>
-            <div className="bg-grey-50 p-4 rounded-lg">
-              <code className="text-label-lg font-mono">variant="simple"</code>
-            </div>
-          </div>
-
-          {/* Media Variant */}
-          <div className="mb-12">
-            <h3 className="text-headline-3-lg font-medium mb-4">Media Variant</h3>
-            <p className="text-body-lg text-dark-grey mb-6">
-              Hero with image support. Content and image are arranged side-by-side on desktop, stacked on mobile.
-            </p>
-            <div className="bg-grey-50 p-4 rounded-lg">
-              <code className="text-label-lg font-mono">variant="media"</code>
-            </div>
-          </div>
+        <section className="w-full px-5 py-6 md:px-10 md:py-8 lg:px-14 lg:py-8">
+          <h2 className="text-headline-6-lg font-medium mb-4">Props</h2>
 
           {/* Props Documentation */}
           <div className="bg-grey-50 p-6 rounded-lg">
-            <h3 className="text-headline-6-lg font-medium mb-4">Updated Props</h3>
             <div className="space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">headline: string</code>
@@ -197,7 +106,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
       </div>
     </main>

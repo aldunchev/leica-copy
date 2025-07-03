@@ -60,6 +60,14 @@
   --spacing-22: 88px;
   --spacing-24: 96px;
   --spacing-26: 104px;
+  --spacing-28: 112px;
+  --spacing-30: 120px;
+  --spacing-32: 128px;
+  --spacing-34: 136px;
+  --spacing-36: 144px;
+  --spacing-38: 152px;
+  --spacing-40: 160px;
+  --spacing-42: 168px;
 
   /* === BREAKPOINTS === */
   --breakpoint-sm: 375px;
@@ -77,6 +85,9 @@
   --grid-margin-lg: 56px;
 
   --font-normal: 400;
+
+  --aspect-16\/9: 16 / 9;
+  --aspect-4\/3: 4 / 3;
 }
 
 @theme inline {
@@ -195,6 +206,14 @@
   --spacing-22: var(--spacing-22);
   --spacing-24: var(--spacing-24);
   --spacing-26: var(--spacing-26);
+  --spacing-28: var(--spacing-28);
+  --spacing-30: var(--spacing-30);
+  --spacing-32: var(--spacing-32);
+  --spacing-34: var(--spacing-34);
+  --spacing-36: var(--spacing-36);
+  --spacing-38: var(--spacing-38);
+  --spacing-40: var(--spacing-40);
+  --spacing-42: var(--spacing-42);
 
   /* === RADIUS === */
   --radius-sm: 2px;
@@ -220,6 +239,10 @@
   --grid-margin-sm: var(--grid-margin-sm);
   --grid-margin-md: var(--grid-margin-md);
   --grid-margin-lg: var(--grid-margin-lg);
+
+  /* === ASPECT RATIOS === */
+  --aspect-16\/9: var(--aspect-16\/9);
+  --aspect-4\/3: 4 / 3;
 }
 
 @media (prefers-color-scheme: dark) {
