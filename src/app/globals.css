@@ -88,6 +88,15 @@
 
   --aspect-16\/9: 16 / 9;
   --aspect-4\/3: 4 / 3;
+  --aspect-3\/2: 3 / 2;
+
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
 }
 
 @theme inline {
@@ -183,11 +192,11 @@
   --leading-loose: 1.6;
 
   /* Font Weights */
-  --font-light: 300;
+  --font-weight-light: 300;
   --font-weight-normal: 400;
-  --font-medium: 500;
-  --font-semibold: 600;
-  --font-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
   /* === SPACING === */
   --spacing-1: var(--spacing-1);
@@ -242,7 +251,17 @@
 
   /* === ASPECT RATIOS === */
   --aspect-16\/9: var(--aspect-16\/9);
-  --aspect-4\/3: 4 / 3;
+  --aspect-4\/3: var(--aspect-4\/3);
+  --aspect-3\/2: var(--aspect-3\/2);
+
+  /* === BLUR === */
+  --blur-xs: var(--blur-xs);
+  --blur-sm: var(--blur-sm);
+  --blur-md: var(--blur-md);
+  --blur-lg: var(--blur-lg);
+  --blur-xl: var(--blur-xl);
+  --blur-2xl: var(--blur-2xl);
+  --blur-3xl: var(--blur-3xl);
 }
 
 @media (prefers-color-scheme: dark) {
