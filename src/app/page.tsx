@@ -1,11 +1,30 @@
 import Hero from '@/components/Hero';
+import ProductCard from '@/components/ProductCard';
+import Button from '@/components/Button';
+import Footer from '@/components/Footer';
+import MediaText from '@/components/MediaText';
 
 export default function Home() {
   return (
+    <>
     <main className="min-h-screen">
 
       {/* Hero Component Demo */}
       <div className="space-y-20">
+
+        {/* Button Component Preview */}
+        <section className="w-full px-5 md:px-10 lg:px-14 py-10">
+          <h2 className="text-headline-6-lg font-medium mb-6">Button Component Preview</h2>
+          <div className="flex flex-wrap gap-6 items-end">
+            <Button href="/" type="primary" label="Primary" dot={true} />
+            <Button href="/" type="primary" label="Primary Disabled" disabled />
+            <Button href="/" type="secondary" label="Secondary" />
+            <Button href="/" type="secondary" label="Secondary Disabled" disabled />
+            <Button href="/" type="cta" label="CTA" chevron />
+            <Button href="/" type="cta" label="CTA Disabled" chevron disabled />
+            <Button href="/" type="cta" label="CTA No Chevron" />
+          </div>
+        </section>
 
         {/* Hero Simple with Back Link */}
         <Hero
@@ -65,50 +84,72 @@ export default function Home() {
         {/* Divider */}
         <div className="h-px bg-border" />
 
-        {/* Component Variants Documentation */}
-        <section className="w-full px-5 py-6 md:px-10 md:py-8 lg:px-14 lg:py-8">
-          <h2 className="text-headline-6-lg font-medium mb-4">Props</h2>
-
-          {/* Props Documentation */}
-          <div className="bg-grey-50 p-6 rounded-lg">
-            <div className="space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">headline: string</code>
-                <span className="text-body-sm text-dark-grey">Required - Main headline text</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">subline?: string</code>
-                <span className="text-body-sm text-dark-grey">Optional - Subtitle text</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">variant?: simple | media</code>
-                <span className="text-body-sm text-dark-grey">Component variant (default: simple)</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">imageSrc?: string</code>
-                <span className="text-body-sm text-dark-grey">Image source URL (required for media variant)</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">imageAlt?: string</code>
-                <span className="text-body-sm text-dark-grey">Image alt text (required for media variant)</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">imagePriority?: boolean</code>
-                <span className="text-body-sm text-dark-grey">Next.js image priority loading</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">showBackLink?: boolean</code>
-                <span className="text-body-sm text-dark-grey">Show back navigation link</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <code className="text-label-lg font-mono bg-white px-2 py-1 rounded">size?: sm | md | lg | auto</code>
-                <span className="text-body-sm text-dark-grey">Responsive behavior (default: auto)</span>
-              </div>
-            </div>
+        {/* Media Text Component Demo */}
+        <section className="w-full">
+          <h2 className="text-headline-6-lg font-medium mb-6 px-5 md:px-10 lg:px-14">Media Text Component</h2>
+          <div className="space-y-10">
+            {/* Text Left Layout */}
+            <MediaText
+              headline="The quick, brown fox"
+              subheadline="Lorem ipsum dolor sit amet, consectetuer elit"
+              body="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas"
+              buttonText="Call to Action"
+              imageSrc="/Camera.png"
+              imageAlt="Leica Camera"
+              imageCredits="Photo: Name Surname"
+              layout="text-left"
+            />
+            
+            {/* Text Right Layout */}
+            <MediaText
+              headline="Professional Photography"
+              subheadline="Capture moments with precision"
+              body="Experience the pinnacle of photographic excellence with our professional camera systems. Every detail matters when creating images that stand the test of time."
+              buttonText="Explore Collection"
+              imageSrc="/camera-grey-bg.webp"
+              imageAlt="Professional Camera"
+              imageCredits="Photo: Studio Team"
+              layout="text-right"
+            />
           </div>
         </section>
 
+        {/* Divider */}
+        <div className="h-px bg-border" />
+
+        {/* Product Cards Example */}
+        <section className="w-full px-5 md:px-10 lg:px-14 py-10">
+          <h2 className="text-headline-6-lg font-medium mb-6">Product Cards Example</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 justify-center">
+            <ProductCard
+              imageSrc="/camera-grey-bg.webp"
+              imageAlt="Leica Camera 1"
+              title="LEICA Q3"
+              subline="The ultimate compact full-frame camera."
+              discoverLabel="Discover"
+              shopNowLabel="Shop Now"
+            />
+            <ProductCard
+              imageSrc="/camera-grey-bg.webp"
+              imageAlt="Leica Camera 2"
+              title="LEICA SL2"
+              subline="Professional mirrorless system camera."
+              discoverLabel="Discover"
+              shopNowLabel="Shop Now"
+            />
+            <ProductCard
+              imageSrc="/camera-grey-bg.webp"
+              imageAlt="Leica Camera 3"
+              title="LEICA M11"
+              subline="Legendary rangefinder redefined."
+              discoverLabel="Discover"
+              shopNowLabel="Shop Now"
+            />
+          </div>
+        </section>
       </div>
     </main>
+    { <Footer /> }
+    </>
   );
 }
