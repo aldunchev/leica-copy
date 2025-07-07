@@ -7,7 +7,7 @@ Implement a feature using using the PRP file.
 ## Execution Process
 
 1. **Load PRP**
-   - Read the specified PRP file
+   - Read the specified PRP(product requirements prompt) file
    - Understand all context and requirements
    - Follow all instructions in the PRP and extend the research if needed
    - Ensure you have all needed context to implement the PRP fully
