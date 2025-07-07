@@ -84,11 +84,15 @@
   --grid-margin-md: 40px;
   --grid-margin-lg: 56px;
 
+  /* === CONTAINER === */
+  --container-max-width: 1920px;
+
   --font-normal: 400;
 
   --aspect-16\/9: 16 / 9;
   --aspect-4\/3: 4 / 3;
   --aspect-3\/2: 3 / 2;
+  --aspect-4\/5: 4 / 5;
 
   --blur-xs: 4px;
   --blur-sm: 8px;
@@ -249,10 +253,14 @@
   --grid-margin-md: var(--grid-margin-md);
   --grid-margin-lg: var(--grid-margin-lg);
 
+  /* === CONTAINER === */
+  --container-max-width: var(--container-max-width);
+
   /* === ASPECT RATIOS === */
   --aspect-16\/9: var(--aspect-16\/9);
   --aspect-4\/3: var(--aspect-4\/3);
   --aspect-3\/2: var(--aspect-3\/2);
+  --aspect-4\/5: var(--aspect-4\/5);
 
   /* === BLUR === */
   --blur-xs: var(--blur-xs);
@@ -262,6 +270,10 @@
   --blur-xl: var(--blur-xl);
   --blur-2xl: var(--blur-2xl);
   --blur-3xl: var(--blur-3xl);
+
+  /* === INSET === */
+  --inset-0: 0px;
+  --inset-auto: auto;
 }
 
 @media (prefers-color-scheme: dark) {

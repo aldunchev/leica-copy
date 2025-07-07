@@ -75,3 +75,8 @@ src/
 - Color and spacing values use CSS custom properties for consistency
 - Component variants are implemented through prop-based conditional styling
 - Image optimization handled through Next.js Image component
+
+## Tailwind classes usage:
+- When using Tailwind CSS do not use arbitrary class names like "color-[#232323]".
+- Consider bg-[var(--color-grey-50)] as arbitrary values and do not use it. The proper one should be: bg-grey-50 generated from the `@theme` directive.
+- Use only the class names generated from Tailwind based on the CSS variables in the @global.css file

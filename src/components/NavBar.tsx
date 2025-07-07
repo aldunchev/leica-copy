@@ -65,46 +65,48 @@ function Logo() {
 
 export default function NavBar() {
   return (
-    <nav className="w-full bg-gradient-to-b from-grey-900 via-grey-950/80 to-transparent h-18 md:h-16 flex items-center">
-      <div className="w-full flex flex-row items-center justify-between px-10 md:px-10 lg:px-14" style={{height: 'inherit'}}>
-        {/* Left: Nav links or Menu icon */}
-        <div className="flex items-center w-1/2">
-          {/* Desktop: nav links */}
-          <div className="hidden md:flex flex-row gap-8">
-            {NAV_LINKS.map(link => (
+    <header className="absolute top-0 left-0 right-0 z-50 w-full">
+      <nav className="w-full bg-gradient-to-b from-grey-900 via-grey-950/80 to-transparent h-18 md:h-16 flex items-center">
+        <div className="w-full flex flex-row items-center justify-between px-10 md:px-10 lg:px-14" style={{height: 'inherit'}}>
+          {/* Left: Nav links or Menu icon */}
+          <div className="flex items-center w-1/2">
+            {/* Desktop: nav links */}
+            <div className="hidden md:flex flex-row gap-8">
+              {NAV_LINKS.map(link => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-body-md font-light text-white hover:text-red transition-colors duration-200 px-2 py-1 rounded"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            {/* Tablet/Mobile: menu icon + label */}
+            <button className="flex md:hidden items-center gap-2 text-label-lg font-light text-white px-2 py-1 rounded" aria-label="Open menu">
+              <Icon name="menu" className="w-6 h-6" />
+              <span>Menu</span>
+            </button>
+          </div>
+          {/* Center: Logo */}
+          <div className="flex items-center justify-center flex-1">
+            <Logo />
+          </div>
+          {/* Right: Icon buttons */}
+          <div className="flex flex-row items-center gap-6 md:gap-3 w-1/2 justify-end">
+            {ICONS.map(icon => (
               <a
-                key={link.label}
-                href={link.href}
-                className="text-body-md font-light text-white hover:text-red transition-colors duration-200 px-2 py-1 rounded"
+                key={icon.label}
+                href={icon.href}
+                className="inline-flex items-center justify-center w-10 h-10 text-white hover:text-red transition-colors duration-200"
+                aria-label={icon.label}
               >
-                {link.label}
+                <Icon name={icon.icon} className="w-6 h-6" />
               </a>
             ))}
           </div>
-          {/* Tablet/Mobile: menu icon + label */}
-          <button className="flex md:hidden items-center gap-2 text-label-lg font-light text-white px-2 py-1 rounded" aria-label="Open menu">
-            <Icon name="menu" className="w-6 h-6" />
-            <span>Menu</span>
-          </button>
         </div>
-        {/* Center: Logo */}
-        <div className="flex items-center justify-center flex-1">
-          <Logo />
-        </div>
-        {/* Right: Icon buttons */}
-        <div className="flex flex-row items-center gap-6 md:gap-3 w-1/2 justify-end">
-          {ICONS.map(icon => (
-            <a
-              key={icon.label}
-              href={icon.href}
-              className="inline-flex items-center justify-center w-10 h-10 text-white hover:text-red transition-colors duration-200"
-              aria-label={icon.label}
-            >
-              <Icon name={icon.icon} className="w-6 h-6" />
-            </a>
-          ))}
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

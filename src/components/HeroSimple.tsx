@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from './Image';
 
-interface HeroProps {
+interface HeroSimpleProps {
   headline: string;
   subline?: string;
   showBackLink?: boolean;
@@ -12,12 +12,10 @@ interface HeroProps {
   // Image props
   imageSrc?: string;
   imageAlt?: string;
-  imageWidth?: number;
-  imageHeight?: number;
   imagePriority?: boolean;
 }
 
-export default function Hero({
+export default function HeroSimple({
   headline,
   subline,
   showBackLink = false,
@@ -27,10 +25,8 @@ export default function Hero({
   size = 'auto',
   imageSrc,
   imageAlt,
-  imageWidth = 600,
-  imageHeight = 400,
   imagePriority = false,
-}: HeroProps) {
+}: HeroSimpleProps) {
   // Responsive classes based on size
   const getContainerClasses = () => {
     const baseClasses = "w-full";

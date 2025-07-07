@@ -1,0 +1,12 @@
+.hero__media::after {
+  background: radial-gradient(56% 87.88% at 13.68% 84.01%, rgba(34, 34, 34, .7) 0, rgba(34, 34, 34, 0) 100%);
+  background-blend-mode: multiply;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
