@@ -4,7 +4,7 @@
 
 Implement an automated process that takes Figma design URLs and generates production-ready React components using the Figma MCP server integration. The system should:
 
-1. **Input Processing**: Accept Figma component URLs with basic metadata (component name, description, variant requirements)
+1. **Input Processing**: Accept Figma component URLs with basic metadata (component name, description, variant requirements, images, etc.)
 2. **Design Analysis**: Automatically extract design specifications, tokens, and layout information from Figma
 3. **Component Generation**: Create TypeScript React components that integrate seamlessly with the existing Leica design system
 4. **Iterative Workflow**: Process components step-by-step, allowing for review and refinement at each stage
@@ -12,23 +12,38 @@ Implement an automated process that takes Figma design URLs and generates produc
 
 **Target Outcome**: Transform Figma designs into implementation-ready components with minimal manual intervention while maintaining design system consistency and code quality.
 
+## Components:
+
+1. **Simple Header**
+
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=6476-388774&t=pFExmpBwoBBaTUxn-4
+- **IMPORTANT**: do not include the navigation, it is a separate component
+- Implement the following structure:
+  - Title
+  - Subline
+  - Image
+- Variants:
+  - Check figma, for now what I know is with or without image
+  - Optional back link at the top
+
+2. **Product card**
+
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=10560-411813&m=dev
+- **IMPORTANT**: The image used in production will be transparent, so the background if the card should be grey-050
+- Implement the following structure:
+  - Title
+  - Subline
+  - Image
+  - Two links: Discover and Shop now in one line
+
 ## EXAMPLES:
 
 ### Current Implementation Examples
-- **MediaText Component**: Successfully generated from Figma URL `https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=6089-341376`
-  - Demonstrates responsive layout with text-left/text-right variants
-  - Uses design tokens for typography, spacing, and colors
-  - Includes reusable ImageCredits sub-component
-  - Proper TypeScript interfaces and accessibility attributes
 
 - **Button Component**: Multi-variant component with primary, secondary, and CTA types
   - Surface variants for light/dark themes
   - Interactive states (hover, active, disabled)
   - Icon integration (dots, chevrons)
-
-- **Hero Component**: Flexible component with simple and media variants
-  - Responsive sizing and optional back navigation
-  - Integration with Next.js Image optimization
 
 ### Expected Workflow Example
 ```
@@ -43,13 +58,20 @@ Integration: Add to design system with proper imports/exports
 Demo Implementation: Add usage examples to showcase page
 ↓
 Quality Check: Verify responsive behavior and accessibility
+```
 
 Build Check:
+
 ```
+npm run build
+```
+
+Expected: no errors from the build.
 
 ## DOCUMENTATION:
 
 ### Primary References
+
 1. **Figma MCP Server Documentation**: Integration patterns and API usage for design token extraction
 2. **Leica Design System Tokens**: Complete reference in `src/app/globals.css` including:
    - Color palette (primary, greyscale, semantic colors)
@@ -63,6 +85,7 @@ Build Check:
    - Responsive design with mobile-first approach
    - Tailwind CSS class usage (no arbitrary values)
    - Accessibility considerations (ARIA attributes, semantic HTML)
+   - No border radius and borders
 
 4. **CLAUDE.md**: Project-specific guidelines for AI assistant integration
    - Design system structure and component patterns
