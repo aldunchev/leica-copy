@@ -2,9 +2,9 @@
 
 ## Feature file: $ARGUMENTS
 
-Generate a complete PRP for general feature implementation with thorough research. Ensure context is passed to the AI agent to enable self-validation and iterative refinement. Read the feature file first to understand what needs to be created, how the examples provided help, and any other considerations.
+Generate a complete PRP(Project Requirements Prompt) for general feature implementation with thorough research. Ensure context is passed to the AI agent to enable self-validation and iterative refinement. Read the feature file first to understand what needs to be created, how the examples provided help, and any other considerations.
 
-The AI agent only gets the context you are appending to the PRP and training data. Assuma the AI agent has access to the codebase and the same knowledge cutoff as you, so its important that your research findings are included or referenced in the PRP. The Agent has Websearch capabilities, so pass urls to documentation and examples.
+The AI agent only gets the context you are appending to the PRP and training data. Assume the AI agent has access to the codebase and the same knowledge cutoff as you, so its important that your research findings are included or referenced in the PRP. The Agent has Websearch capabilities, so pass urls to documentation and examples.
 
 ## Research Process
 
@@ -26,13 +26,7 @@ The AI agent only gets the context you are appending to the PRP and training dat
 
 ## PRP Generation
 
-Using INITIAL.md as template:
-
-## Components to build:
-
-- Hero: figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=6552-406393&m=dev
-- Teaser card: figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=10641-434719&m=dev
-- Add them to the home page for preview
+Using PRPs/templates/FE_TEMPLATE.md as template:
 
 ### Critical Context to Include and pass to the AI agent as part of the PRP
 - **Documentation**: URLs with specific sections
@@ -60,8 +54,8 @@ npm run build
 
 *** ULTRATHINK ABOUT THE PRP AND PLAN YOUR APPROACH THEN START WRITING THE PRP ***
 
-## Output
-Save as: `PRPs/{feature-name}.md`
+## Output: !important
+Save as: `PRPs/leica-components-specification.md`
 
 ## Quality Checklist
 - [ ] All necessary context included
