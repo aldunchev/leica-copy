@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import Section from '@/components/Section';
 
 export default function Tokens() {
@@ -153,7 +152,6 @@ export default function Tokens() {
           </div>
         </Section>
       </main>
-      { Footer }
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Section from '@/components/Section';
+import ProductCard from '@/components/ProductCard';
 
 export default function Home() {
   return (
@@ -28,6 +29,33 @@ export default function Home() {
               Design tokens are available in the tokens page.
             </p>
           </Section>
+        </div>
+        {/* Product Cards Preview */}
+        <div className="grid grid-cols-3 w-full justify-items-center mt-20 gap-0">
+          <ProductCard
+            title="LEICA Q3"
+            subline="Full Frame Compact Camera"
+            imageSrc="/Camera.png"
+            imageAlt="Leica Q3 Camera"
+            cta1Label="Discover"
+            cta2Label="Shop Now"
+          />
+          <ProductCard
+            title="LEICA SL2"
+            subline="Mirrorless System Camera"
+            imageSrc="/Hero.png"
+            imageAlt="Leica SL2 Camera"
+            cta1Label="Learn More"
+            cta2Label="Buy Now"
+          />
+          <ProductCard
+            title="LEICA M11"
+            subline="Rangefinder Camera"
+            imageSrc="/teaser-card-hero.png"
+            imageAlt="Leica M11 Camera"
+            cta1Label="Explore"
+            cta2Label="Order"
+          />
         </div>
       </main>
     </>
