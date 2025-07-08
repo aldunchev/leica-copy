@@ -30,11 +30,9 @@ npm run lint
 - **Token showcase**: Design system documentation at `/tokens` route
 
 ### Key Components
-- **Hero**: Flexible hero component with `simple` and `media` variants, responsive sizing, and optional back navigation
 - **Button**: Multi-variant button component (primary, secondary, CTA) with dot and chevron icons, surface variants for light/dark themes
-- **ProductCard**: Product showcase component for camera products
-- **Footer**: Site footer component
 - **Image**: Custom image wrapper component
+- **Section**: Wrapper component
 
 ### Component Patterns
 - TypeScript interfaces for all component props
