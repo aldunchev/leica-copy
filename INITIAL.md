@@ -14,17 +14,34 @@ Implement an automated process that takes Figma design URLs and generates produc
 
 ## Components:
 
-1. **[COMPONENT_NAME]**
+1. **Heading**
 
-- Figma link: [FIGMA_LINK]
-- **IMPORTANT**: [NOTES]
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=5185-131721&m=dev
+- **IMPORTANT**: The styles are already there, just implement the React component
+- Props: heading level -> h1, h2, h3, h4, h5, h6
+
+2. **Icon button**
+
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=8375-85504&t=g6EQD2FfEYtZRlPC-4
+- **IMPORTANT**: Create the svg icon in a reusable way, so other icons can be passed to the component
+
+3. **HeaderModule**
+
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=7893-56737&t=g6EQD2FfEYtZRlPC-4
+- **IMPORTANT**: Reuse the heading and the button components
 - Implement the following structure:
-  -
-  -
-  -
-- Variants:
-  -
-  -
+  - Title -> reuse the heading component created previously
+  - Subline
+  - Text
+  - Call to action -> button, default secondary
+- Variants/types:
+  - Headline: Everything is centered
+  - Headline Left: Heading is left aligned and button on the right
+  - Basic: Everything is left aligned. Each field is on new line.
+
+4. **Credits**
+  https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=19673-595335&t=qbcLrwrkmmYWftL0-4
+  - Icon + text. On mobile it shows only the icon and on tap the text is shown. It should be used in the image component to show the credits for the image, e.g. the author.
 
 ## EXAMPLES:
 

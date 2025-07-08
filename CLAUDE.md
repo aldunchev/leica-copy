@@ -78,3 +78,4 @@ src/
 - When using Tailwind CSS do not use arbitrary class names like "color-[#232323]".
 - Consider bg-[var(--color-grey-50)] as arbitrary values and do not use it. The proper one should be: bg-grey-50 generated from the `@theme` directive.
 - Use only the class names generated from Tailwind based on the CSS variables in the @global.css file
+- Spacing classes are for example: px-4 py-1, not px-spacing-4
