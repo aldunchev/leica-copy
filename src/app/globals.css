@@ -159,31 +159,32 @@
   --text-display-sm: 44px;
 
   /* Font Sizes - Headlines */
-  --text-headline-1-lg: 54px;
-  --text-headline-2-lg: 46px;
-  --text-headline-3-lg: 36px;
-  --text-headline-4-lg: 32px;
-  --text-headline-5-lg: 28px;
-  --text-headline-6-lg: 24px;
+  --text-headline-1-lg: 76px;
+  --text-headline-2-lg: 54px;
+  --text-headline-3-lg: 46px;
+  --text-headline-4-lg: 36px;
+  --text-headline-5-lg: 32px;
+  --text-headline-6-lg: 28px;
 
-  --text-headline-1-md: 48px;
-  --text-headline-2-md: 40px;
-  --text-headline-3-md: 34px;
-  --text-headline-4-md: 30px;
-  --text-headline-5-md: 28px;
-  --text-headline-6-md: 24px;
+  --text-headline-1-md: 68px;
+  --text-headline-2-md: 48px;
+  --text-headline-3-md: 40px;
+  --text-headline-4-md: 34px;
+  --text-headline-5-md: 30px;
+  --text-headline-6-md: 28px;
 
-  --text-headline-1-sm: 40px;
-  --text-headline-2-sm: 36px;
-  --text-headline-3-sm: 32px;
-  --text-headline-4-sm: 28px;
-  --text-headline-5-sm: 24px;
-  --text-headline-6-sm: 20px;
+  --text-headline-1-sm: 44px;
+  --text-headline-2-sm: 40px;
+  --text-headline-3-sm: 36px;
+  --text-headline-4-sm: 32px;
+  --text-headline-5-sm: 28px;
+  --text-headline-6-sm: 24px;
 
   /* Font Sizes - Body Text */
   --text-body-lg: 20px;
   --text-body-md: 18px;
   --text-body-sm: 16px;
+  --text-none: 0px;
 
   /* Font Sizes - Labels */
   --text-label-lg: 14px;
