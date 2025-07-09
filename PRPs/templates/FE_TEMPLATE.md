@@ -3,7 +3,7 @@
 This template serves as a base and structure to generate a full PRP prompt fot the AI tools using the INITIAL.md as a source
 
 ## Purpose
-Implement the components: [Component-1, Component-2] from Figma designs using the existing Leica design system and MCP Figma server integration. This demonstrates the automated Figma-to-code workflow with production-ready React components.
+Implement components from Figma designs using the existing Leica design system and MCP Figma server integration. This demonstrates the automated Figma-to-code workflow with production-ready React components.
 
 ## Core Principles
 1. **Context is King**: Include ALL necessary documentation, examples, and caveats
@@ -15,7 +15,7 @@ Implement the components: [Component-1, Component-2] from Figma designs using th
 ---
 
 ## Goal
-Create [n] new React components ([NAME OF COMPONENTS]) from Figma designs that integrate seamlessly with the existing Leica design system, follow established patterns, and demonstrate proper responsive behavior.
+Create React components from Figma designs that integrate seamlessly with the existing Leica design system, follow established patterns, and demonstrate proper responsive behavior.
 
 ## Why
 - **Business value**: Accelerates design-to-code workflow with automated component generation
@@ -23,8 +23,7 @@ Create [n] new React components ([NAME OF COMPONENTS]) from Figma designs that i
 - **Problems solved**: Reduces manual conversion time while maintaining design fidelity and code quality
 
 ## What
-TypeScript React components:
-[List component names here]
+TypeScript React components that will be specified in the implementation requirements.
 
 ### Success Criteria
 - [ ] Components matches Figma design specifications
@@ -71,14 +70,18 @@ TypeScript React components:
 
 ### Current Codebase Patterns
 ```typescript
-// Component Structure Pattern (from existing components)
+// Component Structure Pattern (from existing Button component)
 interface ComponentProps {
   // Core content
-  headline?: string;
-  subline?: string;
+  label?: string;
+  href?: string;
   // Variants and options
-  variant?: 'simple' | 'media';
-  size?: 'sm' | 'md' | 'lg' | 'auto';
+  type?: 'primary' | 'secondary' | 'cta';
+  disabled?: boolean;
+  // Icon support
+  chevron?: boolean;
+  dot?: boolean;
+  leftIcon?: React.ReactNode;
   // Surface theming
   surface?: 'light' | 'dark';
   // Optional functionality
@@ -91,18 +94,19 @@ const getResponsiveClasses = () => {
 };
 
 // Design Token Usage (NO arbitrary values)
-// ✅ Correct: bg-grey-50 text-foreground
-// ❌ Wrong: bg-[#F5F5F5] text-[#222222]
+// ✅ Correct: bg-grey-50 text-foreground px-8 py-3
+// ❌ Wrong: bg-[#F5F5F5] text-[#222222] px-[32px] py-[12px]
 ```
 
 ### Design System Constraints
 ```css
 /* Available Design Tokens from globals.css */
-Colors: red, black, white, warm-black, grey-50 through grey-900
-Typography: headline-1-sm/md/lg through headline-6-sm/md/lg, body-sm/md/lg
+Colors: red, black, white, warm-black, grey-50 through grey-900, alert colors (info, success, error, warning, neutral)
+Typography: headline-1-sm/md/lg through headline-6-sm/md/lg, body-sm/md/lg, font-outfit, font-lg1052
 Spacing: spacing-1 (4px) through spacing-42 (168px)
 Breakpoints: sm(375px), md(768px), lg(1440px), xl(1920px)
 Aspect Ratios: 16/9, 4/3, 3/2
+Semantic Colors: background, foreground, muted, border
 ```
 
 ### Known Gotchas & Library Quirks
@@ -111,8 +115,8 @@ Aspect Ratios: 16/9, 4/3, 3/2
 // ❌ Don't use: bg-[var(--color-grey-50)] or color-[#232323]
 // ✅ Use: bg-grey-50 text-foreground
 
-// CRITICAL: Existing Hero component has been renamed to HeroSimple
-// Hero will be a completely new component from Figma design
+// CRITICAL: Follow existing component patterns from the codebase
+// New components should integrate with existing design system
 
 // CRITICAL: Image optimization patterns
 // Use Next.js Image component with proper sizes and priority attributes
@@ -144,6 +148,7 @@ Aspect Ratios: 16/9, 4/3, 3/2
 // - Always specify sizes for responsive images
 // - Keep images below 1MB for optimal performance
 // - Use fill for dynamic containers with proper aspect ratios
+// - Follow existing Image component patterns in the codebase
 ```
 
 #### Accessibility Best Practices for Cards & Heroes
@@ -197,12 +202,20 @@ const tokenMapping = {
 ```yaml
 Task 1: Extract Figma Design Specifications
 USE mcp__figma-dev-mode-mcp-server__get_code:
-  - Extract Hero component code from node-id: 6552-406393
-  - Extract Teaser Card component code from node-id: 10641-434719
+  - Extract component specifications from provided Figma URLs
   - Get design tokens and variable definitions
   - Capture visual references with get_image
 
-Task 2:
+Task 2: Component Implementation
+  - Create React components following existing patterns
+  - Implement TypeScript interfaces
+  - Apply design tokens properly
+  - Ensure responsive behavior
+
+Task 3: Integration and Testing
+  - Add components to showcase page
+  - Run linting and build validation
+  - Verify accessibility compliance
 ```
 
 ### Per task pseudocode
@@ -216,11 +229,14 @@ FIGMA_INTEGRATION:
   - validate: design tokens match globals.css
 
 COMPONENT_INTEGRATION:
-  - [COMPONENT]: brand new component from Figma
+  - New components: brand new components from Figma
   - Button: integrate existing Button component
   - Image: use Next.js Image with proper optimization
 
-HOME_PAGE_INTEGRATION:
+SHOWCASE_PAGE_INTEGRATION:
+  - Add new components to src/app/page.tsx
+  - Demonstrate component variants and usage
+  - Maintain proper spacing and layout
 
 ```
 
@@ -262,14 +278,13 @@ npm run dev
 
 ## Final Validation Checklist
 - [ ] Figma designs extracted successfully
-- [ ] Hero component created from Figma design
-- [ ] TeaserCard component created
+- [ ] Components created from Figma designs
 - [ ] Components use design tokens (no arbitrary values)
 - [ ] TypeScript interfaces defined properly
 - [ ] Components are responsive (mobile-first)
 - [ ] Accessibility attributes included
-- [ ] Button integration works correctly
-- [ ] Home page integration complete
+- [ ] Existing component integration works correctly
+- [ ] Showcase page integration complete
 - [ ] All linting passes: `npm run lint`
 - [ ] Build succeeds: `npm run build`
 - [ ] Visual inspection confirms design fidelity
@@ -278,7 +293,7 @@ npm run dev
 
 ## Anti-Patterns to Avoid
 - ❌ Don't use arbitrary Tailwind values (`bg-[#F5F5F5]`)
-- ❌ Don't conflict with existing HeroSimple component
+- ❌ Don't conflict with existing components
 - ❌ Don't forget responsive breakpoints (mobile-first)
 - ❌ Don't skip TypeScript interface definitions
 - ❌ Don't ignore accessibility attributes
