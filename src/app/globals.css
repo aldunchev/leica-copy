@@ -44,6 +44,8 @@
   --font-lg1052: "LG1052", monospace;
 
   /* === SPACING === */
+  --spacing-0: 0px;
+  --spacing-1-px: 1px;
   --spacing-1: 4px;
   --spacing-2: 8px;
   --spacing-3: 12px;
@@ -204,6 +206,8 @@
   --font-weight-bold: 700;
 
   /* === SPACING === */
+  --spacing-0: var(--spacing-0);
+  --spacing-1-px: var(--spacing-1-px);
   --spacing-1: var(--spacing-1);
   --spacing-2: var(--spacing-2);
   --spacing-3: var(--spacing-3);
@@ -321,4 +325,9 @@ h5 {
 
 h6 {
   @apply text-headline-6-sm md:text-headline-6-md lg:text-headline-6-lg;
+}
+
+.cards-gap {
+  row-rule: 1px solid var(--color-grey-300);
+  column-rule: 1px solid var(--color-grey-300);
 }

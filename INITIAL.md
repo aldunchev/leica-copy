@@ -14,16 +14,53 @@ Implement an automated process that takes Figma design URLs and generates produc
 
 ## Components:
 
-1. **Component 1**
+1. **Main Navigation**
 
-- Figma link:
-- **IMPORTANT**: []
-- Props: []
+- Figma link: Desktop: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=27856-151190&t=b07fgYT7DDPOFkY5-4
+  - Mobile Figma Link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=27856-151063&t=b07fgYT7DDPOFkY5-4
 
-2. **Component 2**
+- **IMPORTANT**: Implement the first level for now, no sub levels.
 
-- Figma link: []
-- **IMPORTANT**: []
+- The structure is logo in the middle, menu items on the left, service icons on the right on desktop, same on mobile, but with burger menu for the main nav links on the right.
+- For desktop main nav links container should be 50% and service links container also 50% width. Here is basic structure to use:
+```
+<div class="header__navigation-bar container relative z-20 w-full justify-between items-center gap-2 flex">
+  <div class="header__content-left w-1/2">
+    <!-- Main navigation links go here -->
+  </div>
+  <a href="/en-int" rel="home" class="branding">
+    <!-- Logo goes here -->
+  </a>
+
+  <div class="header__content-right items-center flex justify-end gap-2 w-1/2">
+    <!-- Service icons go here -->
+  </div>
+</div>
+
+```
+- Use the svg/logo.svg and import it as React component, like:
+
+```
+import LogoSvg from '@/svg/logo.svg';
+```
+
+
+2. **Hero**
+
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=6552-406392&t=jUOnNZFojuEnM2qd-4
+- **IMPORTANT**: The navigation is not part of the component. It is a separate component.
+- Download the image from Figma.
+- Use Next image with img tag, no CSS background images and put absolute position the container with the title, subline and button
+
+3. **Product card**
+
+- Figma link: https://www.figma.com/design/zZqepMQoHFh3QmdB0bSBj4/IOP---UI-Design---WIP?node-id=10560-411813&t=jUOnNZFojuEnM2qd-4
+- Structure:
+
+  - Title
+  - Subline
+  - Image
+  - Two buttons: Discover, Shop now: make sure they have 50% for each and are not on 2 lines.
 
 ## EXAMPLES:
 
