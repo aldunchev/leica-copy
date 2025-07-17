@@ -1,13 +1,18 @@
-# Validate PRP Quality
+---
+description: Validate PRP quality, completeness, and implementation readiness
+---
 
-## Usage: /validate-prp [prp-file]
+# Validate PRP Quality
 
 Validate a PRP file for quality, completeness, and readiness for implementation.
 
+## Usage: $ARGUMENTS
+
+**Format**: `[prp-file]`
 **Parameters**:
 - `prp-file`: Path to PRP file (typically in `PRPs/active/` or `PRPs/draft/`)
 
-**Example**: `/validate-prp PRPs/active/nav-hero-product-cards-implementation.md`
+**Example**: `PRPs/active/nav-hero-product-cards-implementation.md`
 
 ## Validation Process
 

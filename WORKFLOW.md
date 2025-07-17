@@ -19,12 +19,11 @@ leica-test-2/
 │   ├── draft/              # Generated but not yet started
 │   ├── backlog/            # Backlog management files
 │   └── templates/          # PRP templates
-├── commands/
-│   ├── generators/         # PRP and requirement generation
-│   ├── validators/         # Quality validation tools
-│   └── workflows/          # Workflow management commands
 └── .claude/
-    └── commands/           # Claude Code integration (symlinks)
+    └── commands/           # Claude Code integration commands
+        ├── generators/     # PRP and requirement generation
+        ├── validators/     # Quality validation tools
+        └── workflows/      # Workflow management commands
 ```
 
 ### Key Components
@@ -42,10 +41,10 @@ Create structured requirements using templates:
 
 ```bash
 # Business requirement (UI components, features)
-/create-requirement business user-authentication
+/generators:create-requirement business user-authentication
 
 # Technical requirement (performance, infrastructure)
-/create-requirement technical performance-optimization
+/generators:create-requirement technical performance-optimization
 ```
 
 **Output**: `requirements/[type]/[name].md` with structured template
@@ -55,7 +54,7 @@ Generate comprehensive PRPs from requirements:
 
 ```bash
 # Generate PRP from requirement
-/generate-prp requirements/business/user-authentication.md
+/generators:generate-prp requirements/business/user-authentication.md
 ```
 
 **Process**:
@@ -72,7 +71,7 @@ Validate PRP before implementation:
 
 ```bash
 # Validate PRP quality
-/validate-prp PRPs/active/user-authentication-implementation.md
+/validators:validate-prp PRPs/active/user-authentication-implementation.md
 ```
 
 **Validation Areas**:
@@ -86,7 +85,7 @@ Execute PRP with full tracking:
 
 ```bash
 # Execute PRP implementation
-/execute-prp PRPs/active/user-authentication-implementation.md
+/workflows:execute-prp PRPs/active/user-authentication-implementation.md
 ```
 
 **Process**:
@@ -101,10 +100,10 @@ Track progress and manage priorities:
 
 ```bash
 # Update PRP status
-/update-backlog user-authentication-implementation.md IN_PROGRESS
+/workflows:update-backlog user-authentication-implementation.md IN_PROGRESS
 
 # Complete implementation
-/update-backlog user-authentication-implementation.md COMPLETED
+/workflows:update-backlog user-authentication-implementation.md COMPLETED
 ```
 
 ## Priority Management
@@ -185,19 +184,22 @@ Projects are prioritized using a 2x2 matrix:
 
 ### Generation Commands
 ```bash
-/create-requirement [business|technical] [name]
-/generate-prp [requirement-file]
+# Located in .claude/commands/generators/
+/generators:create-requirement [business|technical] [name]
+/generators:generate-prp [requirement-file]
 ```
 
 ### Validation Commands
 ```bash
-/validate-prp [prp-file]
+# Located in .claude/commands/validators/
+/validators:validate-prp [prp-file]
 ```
 
 ### Workflow Commands
 ```bash
-/execute-prp [prp-file]
-/update-backlog [prp-file] [status] [notes]
+# Located in .claude/commands/workflows/
+/workflows:execute-prp [prp-file]
+/workflows:update-backlog [prp-file] [status] [notes]
 ```
 
 ## Best Practices
@@ -303,11 +305,11 @@ npm run test      # Unit tests (when available)
 ## Getting Started
 
 1. **Review existing structure**: Examine current requirements and PRPs
-2. **Create your first requirement**: Use `/create-requirement` command
-3. **Generate a PRP**: Use `/generate-prp` command
-4. **Validate quality**: Use `/validate-prp` command
-5. **Execute implementation**: Use `/execute-prp` command
-6. **Track progress**: Use `/update-backlog` command
+2. **Create your first requirement**: Use `/generators:create-requirement` command
+3. **Generate a PRP**: Use `/generators:generate-prp` command
+4. **Validate quality**: Use `/validators:validate-prp` command
+5. **Execute implementation**: Use `/workflows:execute-prp` command
+6. **Track progress**: Use `/workflows:update-backlog` command
 
 This workflow ensures systematic, high-quality development with full traceability from requirements to implementation.
 

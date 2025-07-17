@@ -1,33 +1,43 @@
-# Create New Requirement
+---
+description: Create new requirement file from template with proper structure
+---
 
-## Usage: /create-requirement [type] [name]
+# Create New Requirement
 
 Create a new requirement file from template with proper structure and validation.
 
+## Usage: $ARGUMENTS
+
+**Format**: `[type] [name]`
 **Parameters**:
 - `type`: `business` or `technical`
 - `name`: Requirement name (kebab-case, e.g., "user-authentication")
 
-**Example**: `/create-requirement business user-authentication`
+**Example**: `business user-authentication`
 
 ## Process
 
-1. **Determine Template**
+1. **Parse Arguments**
+   - Extract type and name from $ARGUMENTS
+   - Validate type is `business` or `technical`
+   - Validate name uses kebab-case format
+
+2. **Determine Template**
    - `business` → Use `requirements/templates/business-requirement-template.md`
    - `technical` → Use `requirements/templates/technical-requirement-template.md`
 
-2. **Create Requirement File**
+3. **Create Requirement File**
    - Copy appropriate template
    - Save as `requirements/[type]/[name].md`
    - Replace template placeholders with contextual content
 
-3. **Initialize Content**
+4. **Initialize Content**
    - Add feature name and basic description
    - Include creation date and status
    - Set initial priority and effort estimates
    - Add placeholder sections for completion
 
-4. **Backlog Integration**
+5. **Backlog Integration**
    - Update `PRPs/backlog/backlog-manager.md` with new requirement
    - Add entry to priority matrix
    - Set initial status as "DRAFT"

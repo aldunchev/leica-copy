@@ -1,15 +1,20 @@
-# Update Backlog Status
+---
+description: Update backlog status and move PRPs through workflow stages
+---
 
-## Usage: /update-backlog [prp-file] [status] [optional-notes]
+# Update Backlog Status
 
 Update the status of a PRP in the backlog management system.
 
+## Usage: $ARGUMENTS
+
+**Format**: `[prp-file] [status] [optional-notes]`
 **Parameters**:
 - `prp-file`: Name of PRP file (without path)
 - `status`: New status (DRAFT, ACTIVE, IN_PROGRESS, COMPLETED, CANCELLED)
 - `optional-notes`: Additional notes about the status change
 
-**Example**: `/update-backlog nav-hero-product-cards-implementation.md IN_PROGRESS "Started MainNavigation component"`
+**Example**: `nav-hero-product-cards-implementation.md IN_PROGRESS "Started MainNavigation component"`
 
 ## Valid Status Values
 
@@ -31,8 +36,9 @@ ACTIVE → CANCELLED (deprioritized)
 
 ## Process
 
-1. **Validate Input**
-   - Check PRP file exists
+1. **Parse Arguments**
+   - Extract PRP file, status, and optional notes from $ARGUMENTS
+   - Validate PRP file exists
    - Verify status is valid
    - Confirm valid status transition
 
