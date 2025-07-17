@@ -55,6 +55,8 @@ TypeScript React components that will be specified in the implementation require
   why: Critical project guidelines - Tailwind class restrictions, component patterns, development commands
 
 # External Research & Best Practices
+- url: https://docs.anthropic.com/en/docs/build-with-claude/mcp
+  why: MCP server integration patterns for Figma design extraction
 - url: https://nextjs.org/docs/app/getting-started/images
   why: Next.js 15 Image optimization - priority, sizes, responsive patterns
 
@@ -66,6 +68,12 @@ TypeScript React components that will be specified in the implementation require
 
 - url: https://www.builder.io/blog/convert-figma-to-react-code
   why: Figma-to-React conversion patterns, design token integration workflows
+
+- url: https://tailwindcss.com/docs/theme
+  why: Tailwind CSS v4 custom theme configuration and design token integration
+
+- url: https://web.dev/learn/accessibility/
+  why: Web accessibility fundamentals and implementation patterns
 ```
 
 ### Current Codebase Patterns
@@ -126,6 +134,32 @@ Semantic Colors: background, foreground, muted, border
 
 // CRITICAL: Responsive patterns
 // Always use mobile-first approach: base class, then md:, lg: prefixes
+
+// CRITICAL: No borders or border radius
+// Design system specifically avoids these styling patterns
+```
+
+### Common AI Assistant Gotchas
+```typescript
+// 1. Design Token Usage
+// ❌ AI often defaults to arbitrary CSS values
+// ✅ Must use established design token classes from globals.css
+
+// 2. Component Structure
+// ❌ Creating overly complex component hierarchies
+// ✅ Follow established patterns from existing components
+
+// 3. Responsive Design
+// ❌ Not implementing mobile-first responsive patterns
+// ✅ Use consistent breakpoints: sm, md, lg, xl
+
+// 4. Import Management
+// ❌ Forgetting to add new components to demo pages
+// ✅ Always update showcase page with new components
+
+// 5. Accessibility
+// ❌ Missing ARIA labels, semantic HTML, keyboard navigation
+// ✅ Include proper accessibility attributes and semantic structure
 ```
 
 ### Research-Based Implementation Guidelines
@@ -188,9 +222,60 @@ const tokenMapping = {
   'figma-text-lg': 'text-headline-6-lg',
   'figma-color-primary': 'bg-red'
 };
+
+### Workflow Constraints & Requirements
+```typescript
+// Step-by-Step Processing
+// Generate one component at a time for review and iteration
+
+// Existing Codebase Integration
+// Must work within current project structure and conventions
+
+// Design System Compliance
+// Every component must integrate seamlessly with existing tokens
+
+// Documentation Requirements
+// Each component needs usage examples and showcase integration
+
+// Performance Considerations
+// Optimize images, minimize bundle size, efficient rendering
+```
+
+### Future Considerations
+```typescript
+// Batch Processing
+// Potential for processing multiple related components together
+
+// Component Variants
+// Handling complex component states and variant combinations
+
+// Asset Management
+// Automated handling of images, icons, and other design assets
+
+// Testing Integration
+// Automated component testing and visual regression testing
+
+// Design System Evolution
+// Continuous improvement and expansion of token system
+```
 ```
 
 ## Implementation Blueprint
+
+### Expected Workflow Example
+```typescript
+// Input: Figma URL + Component Requirements
+// ↓
+// Figma MCP Analysis: Extract design specs, tokens, layout
+// ↓
+// Component Generation: Create React component with TypeScript
+// ↓
+// Integration: Add to design system with proper imports/exports
+// ↓
+// Demo Implementation: Add usage examples to showcase page
+// ↓
+// Quality Check: Verify responsive behavior and accessibility
+```
 
 ### Component Analysis from Figma
 ```typescript
