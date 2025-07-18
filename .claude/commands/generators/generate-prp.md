@@ -18,7 +18,10 @@ You will:
 
 1. **Analyze the requirement file** to understand the scope, objectives, and success criteria
 2. **Research the codebase** to identify existing patterns, components, and architectural decisions
-3. **Generate a comprehensive PRP** that includes:
+3. **Determine the requirement type** and select appropriate template:
+   - **Front-end design implementation**: Use `PRPs/templates/FE_TEMPLATE.md`
+   - **Other requirements**: Use standard PRP structure below
+4. **Generate a comprehensive PRP** that includes:
    - Clear implementation objectives
    - Technical specifications
    - Code examples and patterns
@@ -26,9 +29,25 @@ You will:
    - Quality assurance criteria
    - Success metrics
 
-## PRP Structure
+## Template Selection
 
-The generated PRP should follow this structure:
+### Front-end Design Implementation
+If the requirement involves:
+- Figma design implementation
+- Component creation from designs
+- UI/UX implementation
+- Design system integration
+
+Use the `PRPs/templates/FE_TEMPLATE.md` template which includes:
+- Figma MCP server integration
+- Design token compliance
+- Component patterns
+- Accessibility requirements
+- Responsive design guidelines
+
+### Standard PRP Structure
+
+For non-design requirements, use this structure:
 
 ```markdown
 # [Feature Name] Implementation
